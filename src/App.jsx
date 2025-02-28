@@ -1,17 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+// import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HomePage from "./components/HomePage.jsx";
+import Register from "./components/RegisterPage.jsx";
+
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
-    <>
-      <div className={"bg-black w-full h-screen"}>
-          hey
-      </div>
-    </>
+      <Router>
+          <div className="flex flex-col min-w-screen min-h-screen ">
+          {/*<Header/>*/}
+              <Routes>
+                  <Route path="/" element={<HomePage />} />
+                  <Route path="/register" element={<Register />} />
+              </Routes>
+          </div>
+      </Router>
   )
 }
 
